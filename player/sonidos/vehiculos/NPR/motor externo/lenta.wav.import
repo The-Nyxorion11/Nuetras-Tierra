@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://e27fccjk7le1"
+path="res://.godot/imported/lenta.wav-164fc3c093a9e4e441dfe4088b630189.sample"
+
+[deps]
+
+source_file="res://player/sonidos/vehiculos/NPR/motor externo/lenta.wav"
+dest_files=["res://.godot/imported/lenta.wav-164fc3c093a9e4e441dfe4088b630189.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

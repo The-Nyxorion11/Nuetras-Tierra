@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://c5di758csfktl"]
+
+[ext_resource type="Script" path="res://scenes/gui/movil/GameOverlay.gd" id="1_e9j3f"]
+[ext_resource type="Script" path="res://scenes/gui/movil/movil.gd" id="2_menu_button"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.1, 0.12, 0.18, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.5, 0.8, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton"]
+bg_color = Color(0.2, 0.38, 0.61, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.52, 0.73, 0.98, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="GameUI" type="CanvasLayer" unique_id=1748364211]
+layer = 50
+script = ExtResource("1_e9j3f")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=436573795]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.7)
+
+[node name="PanelMenu" type="Control" parent="." unique_id=1994505556]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelMenu" unique_id=1440816332]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelMenu/PanelContainer" unique_id=570176533]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelMenu/PanelContainer/MarginContainer" unique_id=1349771189]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TituloPanel" type="Label" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1809165418]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "MENÚ"
+horizontal_alignment = 1
+
+[node name="Separador" type="HSeparator" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=956487372]
+layout_mode = 2
+
+[node name="LabelDinero" type="Label" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1360497583]
+modulate = Color(0.8, 1, 0.6, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Dinero: $0"
+horizontal_alignment = 1
+
+[node name="LabelHora" type="Label" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=241683224]
+modulate = Color(0.7, 0.8, 1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Hora: 00:00"
+horizontal_alignment = 1
+
+[node name="EspacioV" type="Control" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1609717410]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="GridBotones" type="GridContainer" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=209951543]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="BtnMapa" type="Button" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer/GridBotones" unique_id=1473178443]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton")
+text = "🗺️ MAPA"
+
+[node name="BtnOpciones" type="Button" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer/GridBotones" unique_id=1169946922]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton")
+text = "⚙️ OPCIONES"
+
+[node name="BtnInventario" type="Button" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer/GridBotones" unique_id=1590909364]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton")
+text = "🎒 INVENTARIO"
+
+[node name="BtnCerrar" type="Button" parent="PanelMenu/PanelContainer/MarginContainer/VBoxContainer/GridBotones" unique_id=2075623196]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton")
+text = "✕ CERRAR"
+
+[node name="MenuButton" type="Button" parent="." unique_id=267392323]
+process_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -143.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "📱 MENÚ"
+script = ExtResource("2_menu_button")

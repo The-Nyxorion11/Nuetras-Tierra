@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dy7si5hdsggxx"]
+
+[node name="Configuraciones" type="CanvasLayer" unique_id=1597924663]
+
+[node name="Control" type="Control" parent="." unique_id=753822108]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

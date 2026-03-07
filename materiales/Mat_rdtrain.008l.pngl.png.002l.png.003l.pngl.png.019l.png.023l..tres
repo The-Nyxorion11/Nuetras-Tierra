@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://beb6kg201frqt"]
+
+[resource]
+resource_name = "Mat_rdtrain.008l.pngl.png.002l.png.003l.pngl.png.019l.png.023l."
+cull_mode = 2
+albedo_color = Color(0.88235235, 0.88235235, 0.88235235, 1)
+roughness = 0.4

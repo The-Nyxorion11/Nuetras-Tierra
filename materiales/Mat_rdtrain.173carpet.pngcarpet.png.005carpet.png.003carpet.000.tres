@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c3fonoobaqv47"]
+
+[resource]
+resource_name = "Mat_rdtrain.173carpet.pngcarpet.png.005carpet.png.003carpet.000"
+cull_mode = 2
+roughness = 0.4

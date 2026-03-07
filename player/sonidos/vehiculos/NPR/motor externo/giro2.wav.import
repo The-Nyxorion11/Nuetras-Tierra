@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfrlcttb7qqbe"
+path="res://.godot/imported/giro2.wav-1488938b7d694d24eaa42512899aaf4d.sample"
+
+[deps]
+
+source_file="res://player/sonidos/vehiculos/NPR/motor externo/giro2.wav"
+dest_files=["res://.godot/imported/giro2.wav-1488938b7d694d24eaa42512899aaf4d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

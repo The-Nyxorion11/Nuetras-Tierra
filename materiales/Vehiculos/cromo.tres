@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bldphoryaucpx"]
+
+[resource]
+resource_name = "cromo"
+cull_mode = 2
+diffuse_mode = 1
+albedo_color = Color(1.8984075, 1.8984075, 1.8984075, 1)
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture_channel = 3
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.25565878, 0.25565878, 0.25565878, 1)
+rim_enabled = true

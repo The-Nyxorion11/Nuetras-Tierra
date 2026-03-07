@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cw8m4qlwt5k"]
+
+[ext_resource type="Script" path="res://scenes/gui/movil/movil.gd" id="1_dtvpv"]
+
+[node name="MenuButton" type="Button"]
+process_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -80.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "📱 MENÚ"
+script = ExtResource("1_dtvpv")
+

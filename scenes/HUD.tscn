@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://5j0r6m0jnjo6"]
+
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_qpvh6"]
+[ext_resource type="Shader" path="res://shaders/BarraVida.gdshader" id="2_1etfg"]
+[ext_resource type="Shader" path="res://shaders/BarraHambre.gdshader" id="3_7hsmw"]
+[ext_resource type="Shader" path="res://shaders/LabesHUD.gdshader" id="4_f6qnu"]
+[ext_resource type="Script" path="res://scenes/notificaciones.gd" id="5_k4w17"]
+[ext_resource type="Texture2D" path="res://scenes/gui/UIVehiculo/imagenes/telefono.png" id="6_k4w17"]
+[ext_resource type="Script" path="res://scenes/gui/movil/movil.gd" id="8_twldb"]
+
+[sub_resource type="Shader" id="Shader_qpvh6"]
+code = "shader_type canvas_item;
+void fragment() {
+    float dist = distance(UV, vec2(0.5));
+    COLOR = vec4(1.0, 0.0, 0.0, smoothstep(0.2, 0.9, dist));
+    COLOR.a *= COLOR.a; // Esto hace que el centro sea transparente
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fls4u"]
+shader = SubResource("Shader_qpvh6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hsmw"]
+shader = ExtResource("2_1etfg")
+shader_parameter/salud = 1.0
+shader_parameter/flash_danio = 0.0
+shader_parameter/tiempo_juego = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nysna"]
+shader = ExtResource("3_7hsmw")
+shader_parameter/hambre = 1.0
+shader_parameter/tiempo_juego = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twldb"]
+shader = ExtResource("4_f6qnu")
+shader_parameter/progreso = 0.0
+shader_parameter/tiempo_juego = 0.0
+shader_parameter/color_texto = Color(1, 1, 1, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=350387983]
+layer = 10
+script = ExtResource("1_qpvh6")
+
+[node name="VinietaSangre" type="ColorRect" parent="." unique_id=1845876661]
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_fls4u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.5921569, 0.047058824, 0, 1)
+
+[node name="ContenedorUI" type="Control" parent="." unique_id=699772928]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -10.0
+offset_right = -12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BarraVida" type="ColorRect" parent="ContenedorUI" unique_id=2055854528]
+material = SubResource("ShaderMaterial_7hsmw")
+layout_mode = 1
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 116.0
+offset_bottom = 117.0
+
+[node name="BarraHambre" type="ColorRect" parent="ContenedorUI" unique_id=201221285]
+material = SubResource("ShaderMaterial_nysna")
+layout_mode = 0
+offset_left = 126.0
+offset_top = 16.0
+offset_right = 226.0
+offset_bottom = 116.0
+
+[node name="Notificaciones" type="Label" parent="ContenedorUI" unique_id=25663560]
+material = SubResource("ShaderMaterial_twldb")
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 118.0
+offset_right = 418.0
+offset_bottom = 168.0
+text = "hola"
+horizontal_alignment = 2
+script = ExtResource("5_k4w17")
+
+[node name="Control" type="Control" parent="." unique_id=564656546]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuButton" type="Button" parent="Control" unique_id=632186842]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_bottom = 135.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+icon = ExtResource("6_k4w17")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+script = ExtResource("8_twldb")

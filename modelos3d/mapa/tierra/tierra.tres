@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn61tsdkj4h7d"]
+
+[ext_resource type="Texture2D" path="res://modelos3d/mapa/tierra/GroundDirtWeedsPatchy004_COL_2K.jpg" id="1_xcie1"]
+[ext_resource type="Texture2D" path="res://modelos3d/mapa/tierra/GroundDirtWeedsPatchy004_AO_2K.jpg" id="2_o575o"]
+[ext_resource type="Texture2D" path="res://modelos3d/mapa/tierra/GroundDirtWeedsPatchy004_REFL_2K.jpg" id="3_e3u2l"]
+[ext_resource type="Texture2D" path="res://modelos3d/mapa/tierra/GroundDirtWeedsPatchy004_NRM_2K.jpg" id="4_pohvt"]
+
+[resource]
+albedo_texture = ExtResource("1_xcie1")
+metallic = 1.0
+metallic_texture = ExtResource("3_e3u2l")
+normal_enabled = true
+normal_texture = ExtResource("4_pohvt")
+ao_enabled = true
+ao_texture = ExtResource("2_o575o")
+refraction_enabled = true
+refraction_scale = 0.53
+uv1_scale = Vector3(0.145, 0.145, 0.145)
+uv1_triplanar = true

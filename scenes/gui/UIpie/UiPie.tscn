@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://djqi1h633y78p"]
+
+[ext_resource type="Shader" uid="uid://ctfbk4m24bbqj" path="res://scenes/gui/UIpie/JoystickShader.gdshader" id="3_bgwjj"]
+[ext_resource type="Script" uid="uid://y3u256d6plxo" path="res://scenes/gui/UIpie/joystick_der.gd" id="4_3kag0"]
+[ext_resource type="Script" uid="uid://gcc8qr46cmwf" path="res://scenes/gui/UIpie/zona_touch_camara.gd" id="4_bgwjj"]
+[ext_resource type="Shader" uid="uid://bwbi0lthj47ur" path="res://scenes/gui/UIpie/BotonSalto.gdshader" id="4_p43uj"]
+[ext_resource type="Shader" uid="uid://dxy2u5kyx70y5" path="res://scenes/gui/UIpie/BotonAgachar.gdshader" id="4_t2ese"]
+[ext_resource type="Script" uid="uid://8nadrtw6vck0" path="res://scenes/gui/UIpie/BotonSalto.gd" id="5_3kag0"]
+[ext_resource type="Script" uid="uid://2nnhtfl4v00p" path="res://scenes/gui/UIpie/boton_agachar.gd" id="5_xmuhx"]
+[ext_resource type="Texture2D" uid="uid://cklhrqyr6i3rx" path="res://materiales/imagenes/—Pngtree—palm icon_4576197.png" id="8_t2ese"]
+[ext_resource type="Script" uid="uid://cta8t2s5cku1c" path="res://scenes/interactuar.gd" id="9_xmuhx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnwud"]
+shader = ExtResource("3_bgwjj")
+shader_parameter/joy_position = Vector2(0.5, 0.5)
+shader_parameter/limit_pulse = 0.0
+shader_parameter/run_mode = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_civsp"]
+shader = ExtResource("4_t2ese")
+shader_parameter/agachado = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbori"]
+shader = ExtResource("4_p43uj")
+shader_parameter/tension = 0.0
+shader_parameter/en_suelo = 1.0
+
+[node name="UIpie" type="CanvasLayer" unique_id=897171465]
+
+[node name="Controles" type="Control" parent="." unique_id=37912137]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JoystickIzq" type="ColorRect" parent="Controles" unique_id=1993717293]
+material = SubResource("ShaderMaterial_gnwud")
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = -252.0
+offset_right = 263.0
+offset_bottom = -52.0
+grow_vertical = 0
+script = ExtResource("4_3kag0")
+
+[node name="ZonaCamara" type="Control" parent="Controles" unique_id=1406562232]
+layout_mode = 1
+anchor_left = 0.42
+anchor_top = 0.02
+anchor_right = 1.0
+anchor_bottom = 0.86
+offset_right = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("4_bgwjj")
+
+[node name="BotonAgachar" type="ColorRect" parent="Controles" unique_id=1658773026]
+material = SubResource("ShaderMaterial_civsp")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -162.0
+offset_right = -71.0
+offset_bottom = -62.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_xmuhx")
+
+[node name="BotonSalto" type="ColorRect" parent="Controles" unique_id=813223850]
+material = SubResource("ShaderMaterial_jbori")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -293.0
+offset_right = -71.0
+offset_bottom = -193.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_3kag0")
+
+[node name="Interactuar" type="Button" parent="Controles" unique_id=1541830280]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.549
+anchor_right = 1.0
+anchor_bottom = 0.549
+offset_left = -190.0
+offset_top = -139.75201
+offset_right = -50.0
+offset_bottom = 0.24798584
+grow_vertical = 2
+icon = ExtResource("8_t2ese")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("9_xmuhx")

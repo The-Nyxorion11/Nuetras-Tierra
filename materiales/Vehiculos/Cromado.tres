@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cja11ntvtis0c"]
+
+[ext_resource type="Shader" path="res://materiales/Vehiculos/Cromado.gdshader" id="1_7tvcm"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7tvcm")
+shader_parameter/chrome_color = Color(0.9, 0.9, 0.95, 1)
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 0.05
+shader_parameter/fresnel_strength = 2.0
+shader_parameter/fresnel_color = Color(1, 1, 1, 1)
+shader_parameter/reflection_strength = 1.2

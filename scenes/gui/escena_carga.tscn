@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://khl7l5rpd81"]
+
+[ext_resource type="Shader" path="res://shaders/BarraCarga.gdshader" id="1"]
+[ext_resource type="Script" path="res://scenes/gui/escena_carga.gd" id="2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_BarraCarga"]
+shader = ExtResource("1")
+shader_parameter/progreso = 0.0
+shader_parameter/color_fondo = Color(0.06, 0.08, 0.12, 1)
+shader_parameter/color_barra = Color(0.2, 0.8, 0.95, 1)
+shader_parameter/color_borde = Color(0.95, 0.95, 1, 1)
+shader_parameter/borde_grosor = 0.018
+shader_parameter/animacion = 0.0
+
+[node name="EscenaCarga" type="Control" unique_id=1280237080]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=770034731]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.06, 0.1, 1)
+
+[node name="FondoGradiente" type="ColorRect" parent="Fondo" unique_id=197215019]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03, 0.11, 0.2, 0.62)
+
+[node name="BrilloA" type="ColorRect" parent="Fondo" unique_id=19100177]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 84.0
+offset_top = 74.0
+offset_right = 624.0
+offset_bottom = 414.0
+mouse_filter = 2
+color = Color(0.18, 0.78, 0.95, 0.12)
+
+[node name="BrilloB" type="ColorRect" parent="Fondo" unique_id=184400191]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 1032.0
+offset_top = 418.0
+offset_right = 1602.0
+offset_bottom = 864.0
+mouse_filter = 2
+color = Color(0.05, 0.5, 0.8, 0.1)
+
+[node name="UI" type="Control" parent="." unique_id=933140484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Centro" type="CenterContainer" parent="UI" unique_id=949616928]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Marco" type="MarginContainer" parent="UI/Centro" unique_id=1204085629]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="PanelCarga" type="PanelContainer" parent="UI/Centro/Marco" unique_id=807636615]
+custom_minimum_size = Vector2(760, 340)
+layout_mode = 2
+
+[node name="Contenido" type="VBoxContainer" parent="UI/Centro/Marco/PanelCarga" unique_id=669870304]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="EspacioSuperior" type="Control" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=1685256759]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=909478980]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "CARGANDO"
+horizontal_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=1673315406]
+modulate = Color(0.85, 0.9, 1, 0.95)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Inicializando sistemas del mundo"
+horizontal_alignment = 1
+
+[node name="HBoxEstado" type="HBoxContainer" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=165042191]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Spinner" type="Label" parent="UI/Centro/Marco/PanelCarga/Contenido/HBoxEstado" unique_id=905531921]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "◌"
+
+[node name="Estado" type="Label" parent="UI/Centro/Marco/PanelCarga/Contenido/HBoxEstado" unique_id=541966882]
+modulate = Color(0.8, 0.87, 1, 0.9)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Preparando recursos..."
+
+[node name="Separador" type="HSeparator" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=822158242]
+layout_mode = 2
+
+[node name="BarraCarga" type="ProgressBar" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=1284893939]
+material = SubResource("ShaderMaterial_BarraCarga")
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+show_percentage = false
+
+[node name="Porcentaje" type="Label" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=996453197]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0%"
+horizontal_alignment = 1
+
+[node name="Consejo" type="Label" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=989780321]
+modulate = Color(0.8, 0.88, 1, 0.92)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Consejo: Maneja con cuidado para conservar tracción y control."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="EspacioInferior" type="Control" parent="UI/Centro/Marco/PanelCarga/Contenido" unique_id=503970841]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="FadeOut" type="ColorRect" parent="." unique_id=1365649055]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

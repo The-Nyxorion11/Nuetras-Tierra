@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://0lqgn47ntgr5"]
+
+[resource]
+resource_name = "Material.005texAS.jpg.001texAS.jpg.003texAS.jpg.002texAS.jp.000"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0, 0.0498401, 1)
+roughness = 0.4

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1udyg4x8l1c6"]
+
+[resource]
+resource_name = "Mat_rdtrain.146vehiclelights128.pngvehiclelights128.png.013.001"
+cull_mode = 2
+albedo_color = Color(1, 0.84683394, 0, 1)
+roughness = 0.4

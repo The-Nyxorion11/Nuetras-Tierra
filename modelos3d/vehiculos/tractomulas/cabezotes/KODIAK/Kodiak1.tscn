@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b1c1gb20mqsrh"]
+
+[ext_resource type="PackedScene" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/Kodiak.glb" id="1_5kc2e"]
+
+[node name="Cuerpo-Kodiak" unique_id=205086161 instance=ExtResource("1_5kc2e")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)

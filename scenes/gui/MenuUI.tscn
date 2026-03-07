@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://d3swyhpeve34j"]
+
+[ext_resource type="Script" path="res://scenes/gui/MenuUI.gd" id="1_menu_ui"]
+[ext_resource type="Shader" path="res://shaders/BlurShader.gdshader" id="2_blur_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blur"]
+shader = ExtResource("2_blur_shader")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.05, 0.05, 0.06, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.5, 0.8, 0.9)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu_ui")
+
+[node name="FondoScreenshot" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="TextureScreenshot" type="TextureRect" parent="FondoScreenshot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FondoBlur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_blur")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelMovil" type="PanelContainer" parent="SafeArea"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="PanelMargin" type="MarginContainer" parent="SafeArea/PanelMovil"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="SafeArea/PanelMovil/PanelMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="SafeArea/PanelMovil/PanelMargin/VBox"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="SafeArea/PanelMovil/PanelMargin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "SISTEMA"
+
+[node name="BtnCerrarX" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/Header"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+text = "✕"
+
+[node name="DineroHora" type="HBoxContainer" parent="SafeArea/PanelMovil/PanelMargin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LblDinero" type="Label" parent="SafeArea/PanelMovil/PanelMargin/VBox/DineroHora"]
+modulate = Color(0.8, 1, 0.6, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dinero: $0"
+horizontal_alignment = 1
+
+[node name="LblHora" type="Label" parent="SafeArea/PanelMovil/PanelMargin/VBox/DineroHora"]
+modulate = Color(0.7, 0.8, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hora: 00:00"
+horizontal_alignment = 1
+
+[node name="GridBotones" type="GridContainer" parent="SafeArea/PanelMovil/PanelMargin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="BtnMapa" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "🗺️ MAPA"
+
+[node name="BtnOpciones" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "⚙️ OPCIONES"
+
+[node name="BtnInventario" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "🎒 INVENTARIO"
+
+[node name="BtnCamara" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "📷 CÁMARA"
+
+[node name="BtnMensajes" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "💬 MENSAJES"
+
+[node name="BtnTienda" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "🛒 TIENDA"
+
+[node name="BtnMisiones" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "📋 MISIONES"
+
+[node name="BtnContactos" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "👥 CONTACTOS"
+
+[node name="BtnRadio" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox/GridBotones"]
+custom_minimum_size = Vector2(100, 55)
+layout_mode = 2
+text = "📻 RADIO"
+
+[node name="BtnVolver" type="Button" parent="SafeArea/PanelMovil/PanelMargin/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "← VOLVER AL JUEGO"

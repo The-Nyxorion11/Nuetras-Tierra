@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cjipi7k7vlacv"]
+
+[resource]
+resource_name = "Mat_rdtrain.064leather_dark.pngleather_dark.png.008leather_.001"
+cull_mode = 2
+roughness = 0.4

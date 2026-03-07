@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://beq42am3frtwj"]
+
+[ext_resource type="Script" path="res://Scripts/jugador/player.gd" id="1_3vyb7"]
+[ext_resource type="Shader" path="res://shaders/Player.gdshader" id="2_kpjcp"]
+[ext_resource type="Script" path="res://Scripts/jugador/DañoJugador.gd" id="3_mdl7e"]
+[ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="4_qu4a1"]
+[ext_resource type="AudioStream" path="res://player/sonidos/personaje/Impacto.mp3" id="5_70d11"]
+[ext_resource type="AudioStream" path="res://player/sonidos/personaje/walking1.mp3" id="6_cw2d6"]
+[ext_resource type="Script" path="res://scenes/HungerComponent.gd" id="7_cw2d6"]
+[ext_resource type="Shader" path="res://shaders/parpadeo.gdshader" id="8_khinc"]
+[ext_resource type="PackedScene" path="res://scenes/gui/UIpie/UiPie.tscn" id="9_bruh7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mdl7e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqkch"]
+shader = ExtResource("2_kpjcp")
+shader_parameter/flash_color = Color(0, 0, 0, 1)
+shader_parameter/intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bruh7"]
+shader = ExtResource("8_khinc")
+shader_parameter/blink_progress = 0.0
+shader_parameter/softness = 0.1890000089775
+
+[node name="player" type="CharacterBody3D" unique_id=185812776 groups=["jugador"]]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1519912197]
+shape = SubResource("CapsuleShape3D_g2els")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1890129554]
+visible = false
+mesh = SubResource("CapsuleMesh_mdl7e")
+
+[node name="Head" type="Node3D" parent="." unique_id=1318878378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1902369515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033352107, 0, -0.1949203)
+far = 500.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=127217570]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D/CanvasLayer" unique_id=326742235]
+material = SubResource("ShaderMaterial_dqkch")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="linterna" type="SpotLight3D" parent="Head" unique_id=9829775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34704137, -0.43980205, 0)
+light_color = Color(1, 1, 0.68235296, 1)
+light_energy = 1.901
+spot_range = 7.0
+spot_angle = 19.98576
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1640228819]
+script = ExtResource("3_mdl7e")
+
+[node name="HUD" parent="." unique_id=350387983 instance=ExtResource("4_qu4a1")]
+
+[node name="SonidoImpacto" type="AudioStreamPlayer3D" parent="." unique_id=1851331584]
+stream = ExtResource("5_70d11")
+
+[node name="SonidoPasos" type="AudioStreamPlayer3D" parent="." unique_id=194097768]
+stream = ExtResource("6_cw2d6")
+
+[node name="InteraccionRay" type="RayCast3D" parent="." unique_id=1847629588]
+transform = Transform3D(1, 0, 0, 0, -8.631233e-08, -3.5818875, 0, 1.974596, -1.5656927e-07, 0, 0.5897665, -0.12895316)
+debug_shape_custom_color = Color(0, 0, 0, 0.40392157)
+
+[node name="HungerComponent" type="Node" parent="." unique_id=1890003660]
+script = ExtResource("7_cw2d6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1894021277]
+
+[node name="Parpadeo" type="ColorRect" parent="CanvasLayer" unique_id=172776631]
+material = SubResource("ShaderMaterial_bruh7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -153.0
+offset_right = -5.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.04, 1.4383998)
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="UIpie" parent="." unique_id=897171465 instance=ExtResource("9_bruh7")]
+
+[editable path="HUD"]

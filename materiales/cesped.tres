@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ec8odc14gyjd"]
+
+[ext_resource type="Texture2D" path="res://materiales/imagenes/cesped/10_grass cutted PBR texture-seamless.jpg" id="1_mt1hj"]
+[ext_resource type="Texture2D" path="res://materiales/imagenes/cesped/10_grass cutted texture PBR-AO.jpg" id="2_egeri"]
+[ext_resource type="Texture2D" path="res://materiales/imagenes/cesped/10_grass cutted texture PBR_NORM.jpg" id="3_bjljx"]
+
+[resource]
+resource_name = "Material.003dashboard.png.017dashboard.png.065dashboard.png.118"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_mt1hj")
+roughness = 0.4
+normal_enabled = true
+normal_texture = ExtResource("3_bjljx")
+ao_enabled = true
+ao_texture = ExtResource("2_egeri")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.46651644

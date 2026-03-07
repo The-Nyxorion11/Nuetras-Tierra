@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://cmr7yv8n5kqwp"]
+
+[ext_resource type="Script" path="res://scenes/gui/Opciones.gd" id="1_opciones"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.05, 0.05, 0.06, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.5, 0.8, 0.9)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Opciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_opciones")
+
+[node name="FondoOscuro" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelOpciones" type="PanelContainer" parent="SafeArea"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="PanelMargin" type="MarginContainer" parent="SafeArea/PanelOpciones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="SafeArea/PanelOpciones/PanelMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "OPCIONES"
+
+[node name="BtnCerrarX" type="Button" parent="SafeArea/PanelOpciones/PanelMargin/VBox/Header"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+text = "✕"
+
+[node name="TabContainer" type="TabContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Audio" type="ScrollContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxAudio" type="VBoxContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="LblVolumenMaster" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+text = "Volumen General: 100%"
+
+[node name="SliderVolumenMaster" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LblVolumenMusica" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+text = "Volumen Música: 100%"
+
+[node name="SliderVolumenMusica" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LblVolumenSFX" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+text = "Volumen Efectos: 100%"
+
+[node name="SliderVolumenSFX" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LblVolumenAmbiente" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+text = "Volumen Ambiente: 100%"
+
+[node name="SliderVolumenAmbiente" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Audio/VBoxAudio"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Video" type="ScrollContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxVideo" type="VBoxContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="LblPantallaCompleta" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+text = "Pantalla Completa"
+
+[node name="CheckPantallaCompleta" type="CheckButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+
+[node name="LblVSync" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+text = "VSync"
+
+[node name="CheckVSync" type="CheckButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+button_pressed = true
+
+[node name="LblBrillo" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+text = "Brillo: 100%"
+
+[node name="SliderBrillo" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+min_value = 0.5
+max_value = 1.5
+step = 0.05
+value = 1.0
+
+[node name="LblCalidadSombras" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+text = "Calidad de Sombras"
+
+[node name="OptionCalidadSombras" type="OptionButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Video/VBoxVideo"]
+layout_mode = 2
+
+[node name="HUD" type="ScrollContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxHUD" type="VBoxContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="LblMostrarFPS" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+text = "Mostrar FPS"
+
+[node name="CheckMostrarFPS" type="CheckButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+
+[node name="LblMostrarMiniMapa" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+text = "Mostrar Mini Mapa"
+
+[node name="CheckMostrarMiniMapa" type="CheckButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+button_pressed = true
+
+[node name="LblTamañoHUD" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+text = "Tamaño HUD: 100%"
+
+[node name="SliderTamañoHUD" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+min_value = 0.75
+max_value = 1.5
+step = 0.05
+value = 1.0
+
+[node name="LblOpacidadHUD" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+text = "Opacidad HUD: 100%"
+
+[node name="SliderOpacidadHUD" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/HUD/VBoxHUD"]
+layout_mode = 2
+min_value = 0.5
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Gameplay" type="ScrollContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="VBoxGameplay" type="VBoxContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="LblSensibilidadCamara" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+text = "Sensibilidad Cámara: 100%"
+
+[node name="SliderSensibilidadCamara" type="HSlider" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+min_value = 0.25
+max_value = 2.0
+step = 0.05
+value = 1.0
+
+[node name="LblInvertirCamara" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+text = "Invertir Cámara Y"
+
+[node name="CheckInvertirCamara" type="CheckButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+
+[node name="LblVibracion" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+text = "Vibración (Móvil)"
+
+[node name="CheckVibracion" type="CheckButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+button_pressed = true
+
+[node name="LblDificultad" type="Label" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+text = "Dificultad"
+
+[node name="OptionDificultad" type="OptionButton" parent="SafeArea/PanelOpciones/PanelMargin/VBox/TabContainer/Gameplay/VBoxGameplay"]
+layout_mode = 2
+
+[node name="BotonesInferiores" type="HBoxContainer" parent="SafeArea/PanelOpciones/PanelMargin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BtnRestablecer" type="Button" parent="SafeArea/PanelOpciones/PanelMargin/VBox/BotonesInferiores"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Restablecer"
+
+[node name="BtnAplicar" type="Button" parent="SafeArea/PanelOpciones/PanelMargin/VBox/BotonesInferiores"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Aplicar"
+
+[node name="BtnVolver" type="Button" parent="SafeArea/PanelOpciones/PanelMargin/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "← VOLVER"

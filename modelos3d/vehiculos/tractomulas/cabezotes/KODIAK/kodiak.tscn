@@ -1,0 +1,465 @@
+[gd_scene format=3 uid="uid://casmkibuw174b"]
+
+[ext_resource type="PackedScene" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/Kodiak.glb" id="1_a552l"]
+[ext_resource type="Texture2D" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/textures/bocina.png" id="2_o252g"]
+[ext_resource type="Texture2D" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/textures/mobile93a.png" id="3_yom6n"]
+[ext_resource type="Material" path="res://materiales/Vehiculos/Colores basicos/Gris.tres" id="4_uum6k"]
+[ext_resource type="Texture2D" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/textures/black.png" id="5_tw1l1"]
+[ext_resource type="Texture2D" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/textures/indicadores.png" id="6_uq6sw"]
+[ext_resource type="Texture2D" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/textures/interior.png" id="7_rli8d"]
+[ext_resource type="Material" path="res://materiales/Vehiculos/Cromado.tres" id="8_x0rag"]
+[ext_resource type="Material" path="res://materiales/Vehiculos/materiales naturales/Cuero.tres" id="9_trana"]
+[ext_resource type="Material" path="res://materiales/NPR/Cristal1.tres" id="10_ilraf"]
+[ext_resource type="Material" path="res://materiales/Vehiculos/cromo.tres" id="11_o252g"]
+[ext_resource type="Material" path="res://materiales/Vehiculos/Carroceria.tres" id="11_plmlq"]
+[ext_resource type="Texture2D" path="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/textures/sillas.png" id="12_pc7gy"]
+[ext_resource type="Material" path="res://materiales/negro.tres" id="13_d3w6k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vy7f2"]
+size = Vector3(1, 1, 5.208435)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nxbe"]
+albedo_texture = ExtResource("2_o252g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1esc8"]
+albedo_texture = ExtResource("2_o252g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asnn1"]
+albedo_texture = ExtResource("2_o252g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6ge"]
+albedo_texture = ExtResource("3_yom6n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir3i6"]
+albedo_texture = ExtResource("3_yom6n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k40vg"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sq2c"]
+albedo_texture = ExtResource("6_uq6sw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxnj8"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2s6g4"]
+albedo_texture = ExtResource("7_rli8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_not2k"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygy66"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jld42"]
+albedo_texture = ExtResource("7_rli8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_845tt"]
+albedo_texture = ExtResource("7_rli8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jeb3"]
+albedo_texture = ExtResource("7_rli8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ojbv"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs6uq"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofwhm"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2bvh"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5pu02"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yj6b"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7vi8"]
+albedo_texture = ExtResource("12_pc7gy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60ree"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syqsb"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x467y"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgn4j"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b57k"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfph1"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80h0d"]
+albedo_texture = ExtResource("5_tw1l1")
+
+[node name="Kodiak" type="RigidBody3D" unique_id=566090338]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1280659874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51811504, 0.6202698)
+shape = SubResource("BoxShape3D_vy7f2")
+
+[node name="Cuerpo-Kodiak" parent="." unique_id=205086161 instance=ExtResource("1_a552l")]
+
+[node name="SonidoBocinas_002" parent="Cuerpo-Kodiak" index="2" unique_id=191914268]
+material_override = SubResource("StandardMaterial3D_3nxbe")
+
+[node name="SonidoBocinas_001" parent="Cuerpo-Kodiak" index="3" unique_id=1159564696]
+material_override = SubResource("StandardMaterial3D_1esc8")
+
+[node name="SonidoBocinas" parent="Cuerpo-Kodiak" index="4" unique_id=1849828857]
+material_override = SubResource("StandardMaterial3D_asnn1")
+
+[node name="13124_mp3_vehicle_mount_v1_000" parent="Cuerpo-Kodiak" index="7" unique_id=784630081]
+visible = false
+
+[node name="13124_mp3_vehicle_mount_v1_001" parent="Cuerpo-Kodiak" index="8" unique_id=1432032022]
+visible = false
+
+[node name="Box361_001" parent="Cuerpo-Kodiak" index="10" unique_id=1121904260]
+visible = false
+material_override = SubResource("StandardMaterial3D_uu6ge")
+
+[node name="Box361" parent="Cuerpo-Kodiak" index="14" unique_id=572120799]
+visible = false
+material_override = SubResource("StandardMaterial3D_ir3i6")
+
+[node name="Sin nombre_002" parent="Cuerpo-Kodiak" index="16" unique_id=1656548034]
+visible = false
+
+[node name="chassis_023" parent="Cuerpo-Kodiak" index="17" unique_id=1693383808]
+visible = false
+
+[node name="chassis_001" parent="Cuerpo-Kodiak" index="19" unique_id=1888405606]
+visible = false
+
+[node name="Sin nombre_066" parent="Cuerpo-Kodiak" index="20" unique_id=1741053222]
+material_override = ExtResource("4_uum6k")
+
+[node name="Estereo" parent="Cuerpo-Kodiak" index="21" unique_id=190896]
+material_override = SubResource("StandardMaterial3D_k40vg")
+
+[node name="_cockpit_panel_" parent="Cuerpo-Kodiak/Estereo" index="0" unique_id=965214361]
+material_override = SubResource("StandardMaterial3D_2sq2c")
+
+[node name="Volante" parent="Cuerpo-Kodiak" index="23" unique_id=80461300]
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__048" parent="Cuerpo-Kodiak" index="30" unique_id=221538608]
+material_override = SubResource("StandardMaterial3D_dxnj8")
+
+[node name="_parking_brake_on_" parent="Cuerpo-Kodiak" index="33" unique_id=343785477]
+material_override = SubResource("StandardMaterial3D_2s6g4")
+
+[node name="_ref002__047" parent="Cuerpo-Kodiak" index="35" unique_id=329280826]
+material_override = SubResource("StandardMaterial3D_not2k")
+
+[node name="_ref002__046" parent="Cuerpo-Kodiak" index="36" unique_id=1551163698]
+material_override = SubResource("StandardMaterial3D_ygy66")
+
+[node name="Circle" parent="Cuerpo-Kodiak" index="38" unique_id=309676972]
+material_override = SubResource("StandardMaterial3D_jld42")
+
+[node name="GMC logo_ref001_" parent="Cuerpo-Kodiak" index="41" unique_id=1067672979]
+visible = false
+
+[node name="Circle_002" parent="Cuerpo-Kodiak" index="43" unique_id=128345676]
+material_override = SubResource("StandardMaterial3D_845tt")
+
+[node name="Circle_003" parent="Cuerpo-Kodiak" index="44" unique_id=335631656]
+material_override = SubResource("StandardMaterial3D_0jeb3")
+
+[node name="_ref002__044" parent="Cuerpo-Kodiak" index="67" unique_id=1201323863]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__043" parent="Cuerpo-Kodiak" index="68" unique_id=1536324371]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__042" parent="Cuerpo-Kodiak" index="69" unique_id=1080436510]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__000" parent="Cuerpo-Kodiak" index="70" unique_id=1849957057]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__041" parent="Cuerpo-Kodiak" index="71" unique_id=1609962328]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__016" parent="Cuerpo-Kodiak" index="72" unique_id=526718027]
+visible = false
+
+[node name="cromo_ref002__001" parent="Cuerpo-Kodiak" index="73" unique_id=375123148]
+visible = false
+material_override = ExtResource("8_x0rag")
+
+[node name="Palanca" parent="Cuerpo-Kodiak" index="74" unique_id=149194115]
+material_override = ExtResource("8_x0rag")
+
+[node name="_manualgearn_" parent="Cuerpo-Kodiak/Palanca" index="0" unique_id=249783091]
+material_override = SubResource("StandardMaterial3D_7ojbv")
+
+[node name="_ref002__039" parent="Cuerpo-Kodiak" index="75" unique_id=1249565841]
+material_override = SubResource("StandardMaterial3D_fs6uq")
+
+[node name="_ref002__013" parent="Cuerpo-Kodiak" index="76" unique_id=1972480952]
+material_override = SubResource("StandardMaterial3D_ofwhm")
+
+[node name="Guardabarro-trasero1" parent="Cuerpo-Kodiak" index="78" unique_id=966515407]
+material_override = ExtResource("9_trana")
+
+[node name="233_001" parent="Cuerpo-Kodiak" index="79" unique_id=1613532440]
+material_override = ExtResource("9_trana")
+
+[node name="12" parent="Cuerpo-Kodiak" index="87" unique_id=480128594]
+visible = false
+
+[node name="Antena_derecha" parent="Cuerpo-Kodiak" index="88" unique_id=738353783]
+visible = false
+
+[node name="_tex_low_beam_" parent="Cuerpo-Kodiak" index="93" unique_id=1174988227]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_transparent__004" parent="Cuerpo-Kodiak" index="96" unique_id=1264586292]
+material_override = ExtResource("10_ilraf")
+
+[node name="_transparent__002" parent="Cuerpo-Kodiak" index="97" unique_id=26683657]
+material_override = ExtResource("10_ilraf")
+
+[node name="_transparent__003" parent="Cuerpo-Kodiak" index="98" unique_id=514433696]
+material_override = ExtResource("10_ilraf")
+
+[node name="black" parent="Cuerpo-Kodiak" index="99" unique_id=1431698123]
+material_override = SubResource("StandardMaterial3D_p2bvh")
+
+[node name="_transparent__001" parent="Cuerpo-Kodiak" index="100" unique_id=1521612302]
+material_override = ExtResource("10_ilraf")
+
+[node name="_ref002__029" parent="Cuerpo-Kodiak" index="101" unique_id=260840926]
+material_override = ExtResource("4_uum6k")
+
+[node name="_tex_left_blinker_" parent="Cuerpo-Kodiak" index="102" unique_id=342416547]
+visible = false
+
+[node name="_ref002__022" parent="Cuerpo-Kodiak" index="104" unique_id=1133908064]
+visible = false
+
+[node name="_ref002__021" parent="Cuerpo-Kodiak" index="105" unique_id=1966032876]
+visible = false
+
+[node name="_ref002__020" parent="Cuerpo-Kodiak" index="107" unique_id=2129626281]
+visible = false
+
+[node name="_ref002__019" parent="Cuerpo-Kodiak" index="110" unique_id=1883928315]
+visible = false
+
+[node name="233" parent="Cuerpo-Kodiak" index="114" unique_id=1639337394]
+material_override = ExtResource("9_trana")
+
+[node name="_tex_brake_" parent="Cuerpo-Kodiak" index="115" unique_id=779887681]
+visible = false
+
+[node name="Tanques" parent="Cuerpo-Kodiak" index="119" unique_id=1980498349]
+material_override = ExtResource("8_x0rag")
+
+[node name="30" parent="Cuerpo-Kodiak" index="120" unique_id=72246148]
+material_override = ExtResource("8_x0rag")
+
+[node name="_ref002__032" parent="Cuerpo-Kodiak" index="121" unique_id=1457911941]
+material_override = ExtResource("8_x0rag")
+
+[node name="Guardabarro-trasero" parent="Cuerpo-Kodiak" index="123" unique_id=1787275012]
+material_override = ExtResource("9_trana")
+
+[node name="_ref002__018" parent="Cuerpo-Kodiak" index="124" unique_id=1180318597]
+material_override = ExtResource("8_x0rag")
+
+[node name="_ref002__017" parent="Cuerpo-Kodiak" index="125" unique_id=627932136]
+material_override = ExtResource("8_x0rag")
+
+[node name="_ref002__001" parent="Cuerpo-Kodiak" index="126" unique_id=971385223]
+visible = false
+material_override = ExtResource("8_x0rag")
+
+[node name="Exostos" parent="Cuerpo-Kodiak" index="127" unique_id=407248253]
+material_override = ExtResource("11_o252g")
+
+[node name="Pedales" parent="Cuerpo-Kodiak" index="128" unique_id=567317648]
+material_override = ExtResource("4_uum6k")
+
+[node name="Interior" parent="Cuerpo-Kodiak" index="130" unique_id=1444249110]
+material_override = ExtResource("9_trana")
+
+[node name="_ref002__002" parent="Cuerpo-Kodiak" index="131" unique_id=829593788]
+material_override = SubResource("StandardMaterial3D_5pu02")
+
+[node name="_anim008_off__001" parent="Cuerpo-Kodiak" index="132" unique_id=178249049]
+material_override = ExtResource("4_uum6k")
+
+[node name="Cabina" parent="Cuerpo-Kodiak" index="134" unique_id=1683652779]
+material_override = ExtResource("11_plmlq")
+
+[node name="Cabina 02" parent="Cuerpo-Kodiak" index="135" unique_id=799619948]
+material_override = SubResource("StandardMaterial3D_5yj6b")
+
+[node name="Capo" parent="Cuerpo-Kodiak" index="136" unique_id=593859829]
+material_override = ExtResource("11_plmlq")
+
+[node name="_tex_right_blinker_" parent="Cuerpo-Kodiak" index="137" unique_id=1310040537]
+visible = false
+
+[node name="tanques_002" parent="Cuerpo-Kodiak" index="139" unique_id=1990430406]
+material_override = ExtResource("4_uum6k")
+
+[node name="_transparent_anim008_off_" parent="Cuerpo-Kodiak" index="140" unique_id=313692659]
+material_override = ExtResource("8_x0rag")
+
+[node name="_ref002_anim008_off__001" parent="Cuerpo-Kodiak" index="141" unique_id=1742283875]
+material_override = ExtResource("8_x0rag")
+
+[node name="_ref002__007" parent="Cuerpo-Kodiak" index="142" unique_id=1589378640]
+visible = false
+
+[node name="_ref002__004" parent="Cuerpo-Kodiak" index="144" unique_id=477912305]
+material_override = ExtResource("11_o252g")
+
+[node name="_ref002_anim008_off__003" parent="Cuerpo-Kodiak" index="145" unique_id=1360600507]
+material_override = ExtResource("8_x0rag")
+
+[node name="Parachoques-delantero" parent="Cuerpo-Kodiak" index="147" unique_id=1624070798]
+material_override = ExtResource("11_o252g")
+
+[node name="Antenas_delanteras" parent="Cuerpo-Kodiak" index="148" unique_id=29749604]
+visible = false
+
+[node name="Silla 01" parent="Cuerpo-Kodiak" index="150" unique_id=615195664]
+material_override = SubResource("StandardMaterial3D_d7vi8")
+
+[node name="Espejos" parent="Cuerpo-Kodiak" index="151" unique_id=342894551]
+material_override = ExtResource("8_x0rag")
+
+[node name="caja " parent="Cuerpo-Kodiak" index="153" unique_id=253959137]
+material_override = ExtResource("4_uum6k")
+
+[node name="Chasis_volqu 01_002" parent="Cuerpo-Kodiak" index="154" unique_id=476318817]
+material_override = ExtResource("4_uum6k")
+
+[node name="Chasis_volqu 01_001" parent="Cuerpo-Kodiak" index="155" unique_id=558951845]
+material_override = ExtResource("4_uum6k")
+
+[node name="Cabina 08" parent="Cuerpo-Kodiak" index="156" unique_id=2050470922]
+material_override = ExtResource("4_uum6k")
+
+[node name="Cabina 04" parent="Cuerpo-Kodiak" index="157" unique_id=484073228]
+material_override = ExtResource("4_uum6k")
+
+[node name="Rueda_DD" parent="Cuerpo-Kodiak" index="160" unique_id=1475824533]
+material_override = SubResource("StandardMaterial3D_60ree")
+
+[node name="_wheel_fr_ref002_" parent="Cuerpo-Kodiak/Rueda_DD" index="0" unique_id=2108148500]
+material_override = ExtResource("8_x0rag")
+
+[node name="_wheel_fr_skin001_" parent="Cuerpo-Kodiak/Rueda_DD" index="1" unique_id=1760876947]
+material_override = ExtResource("8_x0rag")
+
+[node name="Rueda_DI" parent="Cuerpo-Kodiak" index="161" unique_id=1304356015]
+material_override = ExtResource("8_x0rag")
+
+[node name="_wheel_fl__001" parent="Cuerpo-Kodiak/Rueda_DI" index="0" unique_id=105306151]
+material_override = SubResource("StandardMaterial3D_syqsb")
+
+[node name="_wheel_fl_ref002_" parent="Cuerpo-Kodiak/Rueda_DI" index="1" unique_id=1020492731]
+material_override = ExtResource("8_x0rag")
+
+[node name="Rueda_TI" parent="Cuerpo-Kodiak" index="162" unique_id=376029975]
+material_override = SubResource("StandardMaterial3D_x467y")
+
+[node name="_wheel_rl_ref002_" parent="Cuerpo-Kodiak/Rueda_TI" index="0" unique_id=2021328307]
+material_override = ExtResource("8_x0rag")
+
+[node name="_wheel_rl_skin001_" parent="Cuerpo-Kodiak/Rueda_TI" index="1" unique_id=1412280979]
+material_override = ExtResource("8_x0rag")
+
+[node name="Rueda_TD" parent="Cuerpo-Kodiak" index="163" unique_id=159791268]
+material_override = SubResource("StandardMaterial3D_vgn4j")
+
+[node name="_wheel_rr_ref002_" parent="Cuerpo-Kodiak/Rueda_TD" index="0" unique_id=1619180645]
+material_override = ExtResource("8_x0rag")
+
+[node name="_wheel_rr_skin001_" parent="Cuerpo-Kodiak/Rueda_TD" index="1" unique_id=1002742843]
+material_override = ExtResource("8_x0rag")
+
+[node name="_ref002__008" parent="Cuerpo-Kodiak" index="164" unique_id=370145695]
+visible = false
+
+[node name="parte16" parent="Cuerpo-Kodiak" index="166" unique_id=1143090881]
+visible = false
+
+[node name="parte18" parent="Cuerpo-Kodiak" index="167" unique_id=1661776490]
+visible = false
+
+[node name="parte17" parent="Cuerpo-Kodiak" index="168" unique_id=1549267199]
+visible = false
+
+[node name="_ref002__023" parent="Cuerpo-Kodiak" index="169" unique_id=4193708]
+material_override = SubResource("StandardMaterial3D_8b57k")
+
+[node name="_ref002__024" parent="Cuerpo-Kodiak" index="170" unique_id=737383235]
+material_override = ExtResource("4_uum6k")
+
+[node name="parte31_001" parent="Cuerpo-Kodiak" index="172" unique_id=1917776709]
+material_override = ExtResource("4_uum6k")
+
+[node name="Chasis-Principal" parent="Cuerpo-Kodiak" index="174" unique_id=1706167780]
+material_override = ExtResource("13_d3w6k")
+
+[node name="cabina_000" parent="Cuerpo-Kodiak" index="175" unique_id=190463020]
+material_override = SubResource("StandardMaterial3D_pfph1")
+
+[node name="Sin nombre_199" parent="Cuerpo-Kodiak" index="176" unique_id=1180513983]
+visible = false
+
+[node name="Sin nombre_118" parent="Cuerpo-Kodiak" index="177" unique_id=791953952]
+visible = false
+
+[node name="Sin nombre_123" parent="Cuerpo-Kodiak" index="178" unique_id=1642632484]
+visible = false
+
+[node name="Sin nombre_000" parent="Cuerpo-Kodiak" index="179" unique_id=419741054]
+visible = false
+
+[node name="_ref002__011" parent="Cuerpo-Kodiak" index="182" unique_id=1300945905]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__014" parent="Cuerpo-Kodiak" index="183" unique_id=2059452444]
+visible = false
+material_override = ExtResource("4_uum6k")
+
+[node name="_ref002__054" parent="Cuerpo-Kodiak" index="184" unique_id=135287953]
+material_override = ExtResource("4_uum6k")
+
+[node name="Defaultpart_08_001" parent="Cuerpo-Kodiak" index="188" unique_id=888172993]
+material_override = SubResource("StandardMaterial3D_80h0d")
+
+[node name="Defaultpart_08_002" parent="Cuerpo-Kodiak" index="189" unique_id=607410342]
+material_override = ExtResource("9_trana")
+
+[node name="Defaultpart_08_003" parent="Cuerpo-Kodiak" index="190" unique_id=1087696514]
+material_override = ExtResource("9_trana")
+
+[editable path="Cuerpo-Kodiak"]

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cx86fg406vpmd"]
+
+[resource]
+resource_name = "Mat_rdtrain.048"
+cull_mode = 2
+roughness = 0.4

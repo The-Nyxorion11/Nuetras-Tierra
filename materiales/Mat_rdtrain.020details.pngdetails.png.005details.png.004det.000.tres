@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5ewp6lp1mfss"]
+
+[resource]
+resource_name = "Mat_rdtrain.020details.pngdetails.png.005details.png.004det.000"
+cull_mode = 2
+roughness = 0.4

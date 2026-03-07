@@ -1,0 +1,311 @@
+[gd_scene format=3 uid="uid://q43hfki0s8ho"]
+
+[ext_resource type="Script" uid="uid://ba3tdnkrinxrw" path="res://scenes/gui/ui_vehiculo.gd" id="1_k6735"]
+[ext_resource type="Texture2D" uid="uid://dywybex0dnmks" path="res://scenes/gui/UIVehiculo/imagenes/motor.png" id="2_1tylv"]
+[ext_resource type="Texture2D" uid="uid://ovcqi5n3oarn" path="res://scenes/gui/UIVehiculo/imagenes/freno-de-mano.png" id="3_sicxr"]
+[ext_resource type="Shader" uid="uid://dfq5jojypndk6" path="res://scenes/gui/Velocimetro.gdshader" id="3_vyq17"]
+[ext_resource type="Texture2D" uid="uid://ugltifke1sbn" path="res://scenes/gui/UIVehiculo/imagenes/interactuar.png" id="4_dxb63"]
+[ext_resource type="Script" uid="uid://dy2yx76gsj7vq" path="res://scenes/gui/PedalProgresivo.gd" id="8_vyq17"]
+[ext_resource type="Shader" uid="uid://c6meu7woycpsv" path="res://scenes/gui/Steering.gdshader" id="9_4cxyc"]
+[ext_resource type="Script" uid="uid://gcc8qr46cmwf" path="res://scenes/gui/UIpie/zona_touch_camara.gd" id="9_6dok2"]
+[ext_resource type="Shader" uid="uid://b6nxo1ptoorkh" path="res://scenes/gui/PedalFreno.gdshader" id="9_pncb0"]
+[ext_resource type="Script" uid="uid://dglllqu6kxh3r" path="res://scenes/gui/volante.gd" id="10_1tylv"]
+[ext_resource type="Script" uid="uid://bwfhtm3ym3f7a" path="res://scenes/gui/PedalFreno.gd" id="10_4cxyc"]
+[ext_resource type="Texture2D" uid="uid://blnu66efmmuof" path="res://scenes/gui/UIVehiculo/imagenes/steering.png" id="10_sicxr"]
+[ext_resource type="Texture2D" uid="uid://cxgwaiyt8sxmf" path="res://scenes/gui/UIVehiculo/imagenes/camara.png" id="12_sicxr"]
+[ext_resource type="Script" uid="uid://cvirh4yiym25d" path="res://scenes/gui/SelectorMarchasNuevo.gd" id="13_mgtqw"]
+[ext_resource type="Shader" uid="uid://cmjo27h7imy4q" path="res://scenes/gui/MarchaBotonUniversal.gdshader" id="15_marchas"]
+[ext_resource type="Shader" uid="uid://8q2065qb8j33" path="res://scenes/gui/BotonVehiculo.gdshader" id="16_boton"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_motor"]
+shader = ExtResource("16_boton")
+shader_parameter/activo = false
+shader_parameter/color_activo = Vector4(1, 1, 0, 1)
+shader_parameter/color_inactivo = Vector4(1, 1, 1, 1)
+shader_parameter/brillo_activo = 1.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_freno"]
+shader = ExtResource("16_boton")
+shader_parameter/activo = false
+shader_parameter/color_activo = Vector4(1, 1, 0, 1)
+shader_parameter/color_inactivo = Vector4(1, 1, 1, 1)
+shader_parameter/brillo_activo = 1.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_salir"]
+shader = ExtResource("16_boton")
+shader_parameter/activo = false
+shader_parameter/color_activo = Vector4(1, 1, 0, 1)
+shader_parameter/color_inactivo = Vector4(1, 1, 1, 1)
+shader_parameter/brillo_activo = 1.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxb63"]
+shader = ExtResource("9_4cxyc")
+shader_parameter/rotacion = 0.0
+shader_parameter/escala = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1tylv"]
+shader = ExtResource("9_pncb0")
+shader_parameter/presionado = false
+shader_parameter/intensidad_presion = 0.0
+shader_parameter/opacidad_global = 0.8
+shader_parameter/es_freno = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dok2"]
+shader = ExtResource("3_vyq17")
+shader_parameter/presionado = false
+shader_parameter/intensidad_presion = 0.0
+shader_parameter/opacidad_global = 1.0
+shader_parameter/es_freno = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p"]
+shader = ExtResource("15_marchas")
+shader_parameter/activo = false
+shader_parameter/color_activo = Color(0, 0.8, 1, 1)
+shader_parameter/color_inactivo = Color(0.3, 0.35, 0.4, 1)
+shader_parameter/opacidad = 0.9
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r"]
+shader = ExtResource("15_marchas")
+shader_parameter/activo = false
+shader_parameter/color_activo = Color(0, 0.8, 1, 1)
+shader_parameter/color_inactivo = Color(0.3, 0.35, 0.4, 1)
+shader_parameter/opacidad = 0.9
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n"]
+shader = ExtResource("15_marchas")
+shader_parameter/activo = true
+shader_parameter/color_activo = Color(0, 0.8, 1, 1)
+shader_parameter/color_inactivo = Color(0.3, 0.35, 0.4, 1)
+shader_parameter/opacidad = 0.9
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d"]
+shader = ExtResource("15_marchas")
+shader_parameter/activo = false
+shader_parameter/color_activo = Color(0, 0.8, 1, 1)
+shader_parameter/color_inactivo = Color(0.3, 0.35, 0.4, 1)
+shader_parameter/opacidad = 0.9
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_camara"]
+shader = ExtResource("16_boton")
+shader_parameter/activo = false
+shader_parameter/color_activo = Vector4(1, 1, 0, 1)
+shader_parameter/color_inactivo = Vector4(1, 1, 1, 1)
+shader_parameter/brillo_activo = 1.4
+
+[node name="UIVehiculo" type="CanvasLayer" unique_id=1389448761]
+layer = 10
+script = ExtResource("1_k6735")
+
+[node name="ZonaCamara" type="Control" parent="." unique_id=842190026]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 554.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("9_6dok2")
+
+[node name="SafeArea" type="MarginContainer" parent="." unique_id=1857637129]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 40
+
+[node name="Interface" type="Control" parent="SafeArea" unique_id=1448141522]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DisplayVelocidad" type="Label" parent="SafeArea/Interface" unique_id=2042426011]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.994
+anchor_right = 0.455
+anchor_bottom = 0.994
+offset_left = -67.66
+offset_top = -27.59198
+offset_right = 67.34
+offset_bottom = 27.40802
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "0 km/h"
+horizontal_alignment = 1
+
+[node name="BotonesIzquierda" type="VBoxContainer" parent="SafeArea/Interface" unique_id=260574272]
+custom_minimum_size = Vector2(30, 90)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -73.0
+offset_right = 14.0
+offset_bottom = 87.0
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="BotonMotor" type="Button" parent="SafeArea/Interface/BotonesIzquierda" unique_id=1756396090]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_motor")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("2_1tylv")
+flat = true
+expand_icon = true
+
+[node name="BotonFrenoMano" type="Button" parent="SafeArea/Interface/BotonesIzquierda" unique_id=1246151773]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_freno")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = ExtResource("3_sicxr")
+flat = true
+expand_icon = true
+
+[node name="BotonSalir" type="Button" parent="SafeArea/Interface/BotonesIzquierda" unique_id=1926483195]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_salir")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = ExtResource("4_dxb63")
+flat = true
+expand_icon = true
+
+[node name="PanelVolante" type="Control" parent="SafeArea/Interface" unique_id=2085006919]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -185.0
+offset_right = 260.0
+offset_bottom = 32.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Volante" type="TextureRect" parent="SafeArea/Interface/PanelVolante" unique_id=1195809318]
+material = SubResource("ShaderMaterial_dxb63")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.446
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -57.782005
+offset_right = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+mouse_filter = 0
+texture = ExtResource("10_sicxr")
+expand_mode = 1
+script = ExtResource("10_1tylv")
+
+[node name="PedalesDerecha" type="HBoxContainer" parent="SafeArea/Interface" unique_id=1126106034]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -192.0
+offset_right = 29.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 25
+
+[node name="Freno" type="ColorRect" parent="SafeArea/Interface/PedalesDerecha" unique_id=956910851]
+material = SubResource("ShaderMaterial_1tylv")
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+script = ExtResource("10_4cxyc")
+
+[node name="Acelerador" type="ColorRect" parent="SafeArea/Interface/PedalesDerecha" unique_id=364712449]
+material = SubResource("ShaderMaterial_6dok2")
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+script = ExtResource("8_vyq17")
+
+[node name="SelectorMarchas" type="Control" parent="SafeArea/Interface" unique_id=1518381814]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_top = -242.00003
+offset_right = -53.70923
+offset_bottom = -89.21533
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.36187762, 1.7606475)
+mouse_filter = 2
+script = ExtResource("13_mgtqw")
+
+[node name="BotonesMarcha" type="VBoxContainer" parent="SafeArea/Interface/SelectorMarchas" unique_id=3]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.9780002
+anchor_right = 1.8160001
+anchor_bottom = 1.988
+offset_left = 715.7737
+offset_top = 33.5104
+offset_right = -232.19406
+offset_bottom = -180.13144
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="MarchaP" type="Button" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=4]
+material = SubResource("ShaderMaterial_p")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "P"
+
+[node name="MarchaR" type="Button" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=5]
+material = SubResource("ShaderMaterial_r")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "R"
+
+[node name="MarchaN" type="Button" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=6]
+material = SubResource("ShaderMaterial_n")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "N"
+
+[node name="MarchaD" type="Button" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=7]
+material = SubResource("ShaderMaterial_d")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "D"
+
+[node name="BotonCamara" type="Button" parent="SafeArea/Interface" unique_id=50956515]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_camara")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 6.0
+offset_right = -140.0
+offset_bottom = 42.0
+grow_horizontal = 0
+icon = ExtResource("12_sicxr")
+flat = true
+expand_icon = true

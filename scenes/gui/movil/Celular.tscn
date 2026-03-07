@@ -1,0 +1,694 @@
+[gd_scene format=3 uid="uid://wsl6lrubyj0l"]
+
+[ext_resource type="Script" path="res://scenes/gui/movil/GameOverlay.gd" id="1_07aji"]
+[ext_resource type="Shader" path="res://scenes/gui/movil/shaders/TelefonoModerno.gdshader" id="2_nuevo"]
+[ext_resource type="Shader" path="res://scenes/gui/movil/shaders/ReflejoCristal.gdshader" id="4_pwlu3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_814is"]
+shader = ExtResource("2_nuevo")
+shader_parameter/color_carcasa = Color(0.05, 0.05, 0.06, 1)
+shader_parameter/color_marco = Color(0.15, 0.15, 0.18, 1)
+shader_parameter/radio_esquina = 0.08
+shader_parameter/grosor_marco = 0.08
+shader_parameter/altura_notch = 0.06
+shader_parameter/brillo = 1.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton_secundario"]
+bg_color = Color(0.14, 0.19, 0.28, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.29, 0.43, 0.62, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton_primario"]
+bg_color = Color(0.2, 0.38, 0.61, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.52, 0.73, 0.98, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton_seccion"]
+bg_color = Color(0.12, 0.16, 0.26, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.28, 0.42, 0.62, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton_seccion_active"]
+bg_color = Color(0.2, 0.38, 0.61, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.52, 0.73, 0.98, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_main"]
+bg_color = Color(0.08, 0.1, 0.16, 0.98)
+border_color = Color(0.28, 0.42, 0.62, 0.95)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton_peligro"]
+bg_color = Color(0.54, 0.16, 0.18, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.98, 0.47, 0.47, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_contenido"]
+bg_color = Color(0.07, 0.09, 0.14, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.42, 0.62, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xbd4"]
+shader = ExtResource("4_pwlu3")
+shader_parameter/brillo_color = Color(1, 1, 1, 0.15)
+shader_parameter/intensidad_reflejo = 0.2
+shader_parameter/curvatura = 0.5
+
+[node name="Celular" type="CanvasLayer" unique_id=1431771005]
+process_mode = 3
+layer = 100
+
+[node name="MovilContenedor" type="Control" parent="." unique_id=645706532]
+custom_minimum_size = Vector2(400, 800)
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 400.0
+offset_bottom = 800.0
+grow_horizontal = 1
+grow_vertical = 1
+script = ExtResource("1_07aji")
+
+[node name="Carcasa" type="ColorRect" parent="MovilContenedor" unique_id=361914293]
+material = SubResource("ShaderMaterial_814is")
+layout_mode = 3
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.06, 1)
+
+[node name="PantallaNegra" type="ColorRect" parent="MovilContenedor/Carcasa" unique_id=1407939008]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 0.08
+anchor_top = 0.06
+anchor_right = 0.92
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MargenInterno" type="MarginContainer" parent="MovilContenedor/Carcasa/PantallaNegra" unique_id=1867660105]
+layout_mode = 3
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ContenidoPantalla" type="VBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno" unique_id=1393509685]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HeaderApps" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla" unique_id=1234567890]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TituloApps" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/HeaderApps" unique_id=1111111111]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "📱 APPS"
+
+[node name="BtnCerrarCelular" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla" unique_id=863308410]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_secundario")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_secundario")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_primario")
+text = "CERRAR"
+
+[node name="GridBotonesConfiguracion" type="GridContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla" unique_id=999999999]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="BtnGraficos" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion" unique_id=-812156815]
+custom_minimum_size = Vector2(120, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_seccion_active")
+text = "🎨
+Gráficos"
+
+[node name="BtnAudio" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion" unique_id=298954296]
+custom_minimum_size = Vector2(120, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_seccion_active")
+text = "🔊
+Audio"
+
+[node name="BtnJuego" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion" unique_id=1410065407]
+custom_minimum_size = Vector2(120, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_seccion_active")
+text = "🎮
+Juego"
+
+[node name="BtnHUD" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion" unique_id=1010101010]
+custom_minimum_size = Vector2(120, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_seccion_active")
+text = "📊
+HUD"
+
+[node name="BtnVideo" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion" unique_id=1111111112]
+custom_minimum_size = Vector2(120, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_seccion_active")
+text = "📹
+Video"
+
+[node name="BtnVacio" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion" unique_id=1212121212]
+custom_minimum_size = Vector2(120, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_seccion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_seccion_active")
+disabled = true
+
+[node name="PanelOpciones" type="PanelContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla" unique_id=764421990]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_main")
+
+[node name="MargenOpciones" type="MarginContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones" unique_id=-961633963]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxOpciones" type="VBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones" unique_id=192214403]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderOpciones" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones" unique_id=525438667]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TituloOpciones" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/HeaderOpciones" unique_id=2009924101]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "OPCIONES"
+
+[node name="BtnCerrarOpciones" type="Button" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/HeaderOpciones" unique_id=1048484590]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton_peligro")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_secundario")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_primario")
+text = "X"
+
+[node name="ContenidoOpciones" type="ScrollContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones" unique_id=-913166916]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="PanelGraficos" type="PanelContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones" unique_id=2020202020]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_contenido")
+
+[node name="MargenGraficos" type="MarginContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos" unique_id=2121212121]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ListaGraficos" type="VBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos" unique_id=-2072745074]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelGraficos" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos" unique_id=-1971734973]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "GRÁFICOS"
+
+[node name="CheckVsync" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos" unique_id=1877501983]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "VSync"
+
+[node name="FilaResolucion" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos" unique_id=755318008]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelResolucion" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos/FilaResolucion" unique_id=709346911]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Escala"
+
+[node name="OpcionResolucion" type="OptionButton" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos/FilaResolucion" unique_id=206648511]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+
+[node name="CheckMotionBlur" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos" unique_id=824603188]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Postproceso suave"
+
+[node name="FilaBrillo" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos" unique_id=-1264664266]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelBrillo" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos/FilaBrillo" unique_id=-1163654165]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Brillo"
+
+[node name="SliderBrillo" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelGraficos/MargenGraficos/ListaGraficos/FilaBrillo" unique_id=-1062644064]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.5
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="PanelAudio" type="PanelContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones" unique_id=-961633962]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_contenido")
+
+[node name="MargenAudio" type="MarginContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio" unique_id=-860623862]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ListaAudio" type="VBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio" unique_id=-759613761]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelAudio" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio" unique_id=-658603660]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "AUDIO"
+
+[node name="FilaMaster" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio" unique_id=1823401020]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelMaster" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio/FilaMaster" unique_id=188427363]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Master"
+
+[node name="SliderMaster" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio/FilaMaster" unique_id=472360011]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 80.0
+
+[node name="FilaMusic" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio" unique_id=321552018]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelMusic" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio/FilaMusic" unique_id=215663001]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Música"
+
+[node name="SliderMusic" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio/FilaMusic" unique_id=672002154]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 70.0
+
+[node name="FilaSFX" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio" unique_id=1577122000]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelSFX" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio/FilaSFX" unique_id=193181207]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "SFX"
+
+[node name="SliderSFX" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelAudio/MargenAudio/ListaAudio/FilaSFX" unique_id=848117601]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 85.0
+
+[node name="PanelJuego" type="PanelContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones" unique_id=-254563256]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_contenido")
+
+[node name="MargenJuego" type="MarginContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego" unique_id=-153553155]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ListaJuego" type="VBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego" unique_id=-52543054]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelJuego" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego" unique_id=48467047]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "JUEGO"
+
+[node name="FilaSensibilidad" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego" unique_id=149477148]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelSensibilidad" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego/FilaSensibilidad" unique_id=250487249]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Sensibilidad"
+
+[node name="SliderSensibilidad" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego/FilaSensibilidad" unique_id=351497350]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.05
+max_value = 2.0
+step = 0.01
+value = 0.5
+
+[node name="FilaFOV" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego" unique_id=452507451]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelFOV" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego/FilaFOV" unique_id=553517552]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "FOV"
+
+[node name="SliderFOV" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego/FilaFOV" unique_id=654527653]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 60.0
+max_value = 110.0
+value = 75.0
+
+[node name="CheckInvertirY" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelJuego/MargenJuego/ListaJuego" unique_id=755537754]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Invertir eje Y"
+
+[node name="PanelHUD" type="PanelContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones" unique_id=856547855]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_contenido")
+
+[node name="MargenHUD" type="MarginContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD" unique_id=957557956]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ListaHUD" type="VBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD" unique_id=1058568057]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="LabelHUD" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD" unique_id=1159578158]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "INTERFAZ HUD"
+
+[node name="CheckHUDVida" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD" unique_id=1260588259]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Barra de Vida"
+
+[node name="CheckHUDAccion" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD" unique_id=1361598360]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Indicador de Acción"
+
+[node name="CheckHUDMapa" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD" unique_id=1462608461]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Minimapa"
+
+[node name="CheckHUDBrujula" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD" unique_id=1563618562]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Brújula"
+
+[node name="FilaTamanoHUD" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD" unique_id=1664628663]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="LabelTamanoHUD" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD/FilaTamanoHUD" unique_id=1765638764]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Tamaño"
+
+[node name="SliderTamanoHUD" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD/FilaTamanoHUD" unique_id=1866648865]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.5
+max_value = 1.5
+step = 0.1
+value = 1.0
+
+[node name="FilaPosicionHUD" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD" unique_id=1967658966]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="LabelPosicionHUD" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD/FilaPosicionHUD" unique_id=2068669067]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Posición"
+
+[node name="OpcionPosicionHUD" type="OptionButton" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelHUD/MargenHUD/ListaHUD/FilaPosicionHUD" unique_id=-2125288128]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+item_count = 4
+popup/item_0/text = "Superior Izquierda"
+popup/item_0/id = 0
+popup/item_1/text = "Superior Derecha"
+popup/item_1/id = 1
+popup/item_2/text = "Inferior Izquierda"
+popup/item_2/id = 2
+popup/item_3/text = "Inferior Derecha"
+popup/item_3/id = 3
+
+[node name="PanelVideo" type="PanelContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones" unique_id=-2024278027]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_contenido")
+
+[node name="MargenVideo" type="MarginContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo" unique_id=-1923267926]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ListaVideo" type="VBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo" unique_id=-1822257825]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelVideo" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo" unique_id=-1721247724]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "VIDEO"
+
+[node name="FilaNivelBrillo" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo" unique_id=-1620237623]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelNivelBrillo" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo/FilaNivelBrillo" unique_id=-1519227522]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Brillo"
+
+[node name="SliderNivelBrillo" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo/FilaNivelBrillo" unique_id=-1418217421]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.3
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="FilaContraste" type="HBoxContainer" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo" unique_id=-1317207320]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelContraste" type="Label" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo/FilaContraste" unique_id=-1216197219]
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Contraste"
+
+[node name="SliderContraste" type="HSlider" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo/FilaContraste" unique_id=-1115187118]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.5
+max_value = 1.5
+step = 0.1
+value = 1.0
+
+[node name="CheckFullscreen" type="CheckBox" parent="MovilContenedor/Carcasa/PantallaNegra/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/ContenidoOpciones/PanelVideo/MargenVideo/ListaVideo" unique_id=-1014177017]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Pantalla Completa"
+
+[node name="ReflejoCristal" type="ColorRect" parent="MovilContenedor" unique_id=2008228958]
+material = SubResource("ShaderMaterial_0xbd4")
+layout_mode = 0
+offset_left = 5.000061
+offset_top = 1.0
+offset_right = 401.00006
+offset_bottom = 807.0
+mouse_filter = 2
+
+[connection signal="pressed" from="MovilContenedor/Carcasa/MargenInterno/ContenidoPantalla/BtnCerrarCelular" to="MovilContenedor" method="_on_cerrar_celular"]
+[connection signal="pressed" from="MovilContenedor/Carcasa/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion/BtnGraficos" to="MovilContenedor" method="_on_btn_graficos_presionado"]
+[connection signal="pressed" from="MovilContenedor/Carcasa/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion/BtnAudio" to="MovilContenedor" method="_on_btn_audio_presionado"]
+[connection signal="pressed" from="MovilContenedor/Carcasa/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion/BtnJuego" to="MovilContenedor" method="_on_btn_juego_presionado"]
+[connection signal="pressed" from="MovilContenedor/Carcasa/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion/BtnHUD" to="MovilContenedor" method="_on_btn_hud_presionado"]
+[connection signal="pressed" from="MovilContenedor/Carcasa/MargenInterno/ContenidoPantalla/GridBotonesConfiguracion/BtnVideo" to="MovilContenedor" method="_on_btn_video_presionado"]
+[connection signal="pressed" from="MovilContenedor/Carcasa/MargenInterno/ContenidoPantalla/PanelOpciones/MargenOpciones/VBoxOpciones/HeaderOpciones/BtnCerrarOpciones" to="MovilContenedor" method="_on_cerrar_opciones"]
+
