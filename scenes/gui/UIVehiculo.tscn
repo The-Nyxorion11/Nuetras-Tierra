@@ -147,7 +147,6 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 0.0
 offset_top = -140.0
 offset_right = 100.0
 offset_bottom = 140.0
@@ -163,7 +162,6 @@ anchor_bottom = 0.5
 offset_top = -45.0
 offset_right = 30.0
 offset_bottom = 45.0
-mouse_filter = 0
 color = Color(0.15, 0.18, 0.22, 0.95)
 
 [node name="IconoMenu" type="Label" parent="SafeArea/Interface/MenuDesplegable/TabMenu" unique_id=100000201]
@@ -179,7 +177,6 @@ offset_right = 10.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 theme_override_font_sizes/font_size = 26
 text = "☰"
 horizontal_alignment = 1
@@ -364,9 +361,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -282.0
+offset_left = -277.0
 offset_top = -242.00003
-offset_right = -53.70923
+offset_right = -62.526123
 offset_bottom = -89.21533
 grow_horizontal = 0
 grow_vertical = 0
@@ -380,10 +377,10 @@ anchors_preset = -1
 anchor_left = -2.9780002
 anchor_right = 1.8160001
 anchor_bottom = 1.988
-offset_left = 591.42236
-offset_top = 12.495423
-offset_right = -199.03368
-offset_bottom = -159.24057
+offset_left = 666.0332
+offset_top = 23.286896
+offset_right = -190.74342
+offset_bottom = -87.90631
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -391,7 +388,7 @@ theme_override_constants/separation = 4
 
 [node name="MarchaP" type="ColorRect" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=4]
 material = SubResource("ShaderMaterial_p")
-custom_minimum_size = Vector2(58, 58)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
@@ -402,9 +399,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 28
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 text = "P"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -412,7 +409,7 @@ autowrap_mode = 2
 
 [node name="MarchaR" type="ColorRect" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=5]
 material = SubResource("ShaderMaterial_r")
-custom_minimum_size = Vector2(58, 58)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
@@ -423,9 +420,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 28
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 text = "R"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -433,7 +430,7 @@ autowrap_mode = 2
 
 [node name="MarchaN" type="ColorRect" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=6]
 material = SubResource("ShaderMaterial_n")
-custom_minimum_size = Vector2(58, 58)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
@@ -444,9 +441,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 28
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 text = "N"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -454,7 +451,7 @@ autowrap_mode = 2
 
 [node name="MarchaD" type="ColorRect" parent="SafeArea/Interface/SelectorMarchas/BotonesMarcha" unique_id=7]
 material = SubResource("ShaderMaterial_d")
-custom_minimum_size = Vector2(58, 58)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
@@ -463,11 +460,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.76337
+offset_top = -5.444622
+offset_right = 2.7633667
+offset_bottom = 3.555378
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 28
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.55)
 text = "D"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://boon1onl2dg1u"
-path="res://.godot/imported/npr.glb-ac0eeffeb8341c625ea7ca188b9e7703.scn"
+valid=false
 
 [deps]
 
 source_file="res://modelos3d/vehiculos/NPR/npr.glb"
-dest_files=["res://.godot/imported/npr.glb-ac0eeffeb8341c625ea7ca188b9e7703.scn"]
 
 [params]
 

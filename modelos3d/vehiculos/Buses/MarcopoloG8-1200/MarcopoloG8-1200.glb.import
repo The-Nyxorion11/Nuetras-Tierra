@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://yv605xd7hmxt"
-path="res://.godot/imported/MarcopoloG8-1200.glb-0ffd13b23788f9d38457757114dfac41.scn"
+valid=false
 
 [deps]
 
 source_file="res://modelos3d/vehiculos/Buses/MarcopoloG8-1200/MarcopoloG8-1200.glb"
-dest_files=["res://.godot/imported/MarcopoloG8-1200.glb-0ffd13b23788f9d38457757114dfac41.scn"]
 
 [params]
 

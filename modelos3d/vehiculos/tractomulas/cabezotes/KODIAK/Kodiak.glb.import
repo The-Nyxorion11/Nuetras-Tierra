@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c4prjqqcnyra5"
-path="res://.godot/imported/Kodiak.glb-88fc02aa83dc2c04c1cb22a2cf128840.scn"
+valid=false
 
 [deps]
 
 source_file="res://modelos3d/vehiculos/tractomulas/cabezotes/KODIAK/Kodiak.glb"
-dest_files=["res://.godot/imported/Kodiak.glb-88fc02aa83dc2c04c1cb22a2cf128840.scn"]
 
 [params]
 

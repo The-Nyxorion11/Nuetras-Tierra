@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddl0a6qgblljc"
-path="res://.godot/imported/Estacas.glb-24bb17c647119e23db22ce8d02c36549.scn"
+valid=false
 
 [deps]
 
 source_file="res://modelos3d/vehiculos/NPR/cargas/Estacas.glb"
-dest_files=["res://.godot/imported/Estacas.glb-24bb17c647119e23db22ce8d02c36549.scn"]
 
 [params]
 

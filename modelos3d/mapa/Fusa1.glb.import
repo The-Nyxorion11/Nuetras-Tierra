@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://345nysigtgvi"
-path="res://.godot/imported/Fusa1.glb-8ffa4e31b81982270c490b2da11bbda5.scn"
+valid=false
 
 [deps]
 
 source_file="res://modelos3d/mapa/Fusa1.glb"
-dest_files=["res://.godot/imported/Fusa1.glb-8ffa4e31b81982270c490b2da11bbda5.scn"]
 
 [params]
 

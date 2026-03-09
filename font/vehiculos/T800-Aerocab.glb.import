@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ne3o1tbsy4lh"
-path="res://.godot/imported/T800-Aerocab.glb-d16172ca25664298903a75b661516fa9.scn"
+valid=false
 
 [deps]
 
 source_file="res://font/vehiculos/T800-Aerocab.glb"
-dest_files=["res://.godot/imported/T800-Aerocab.glb-d16172ca25664298903a75b661516fa9.scn"]
 
 [params]
 
