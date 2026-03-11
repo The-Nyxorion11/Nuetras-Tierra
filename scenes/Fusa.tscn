@@ -5,7 +5,6 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://bhhj1l0qp5b3k" path="res://scenes/Fusa.occ" id="5_bwfyw"]
 [ext_resource type="PackedScene" uid="uid://cxef2qmeh5c4i" path="res://modelos3d/vehiculos/Buses/MarcopoloG8-1200/MarcopoloG8-1200.tscn" id="9_dpfe0"]
 [ext_resource type="PackedScene" uid="uid://beq42am3frtwj" path="res://scenes/Player.tscn" id="11_eu68q"]
-[ext_resource type="PackedScene" uid="uid://ctxljpie4o5nb" path="res://modelos3d/vehiculos/NPR/npr.tscn" id="12_c5vow"]
 [ext_resource type="Material" uid="uid://2s5gt1bmb8xr" path="res://materiales/Chasis.tres" id="13_dtv6f"]
 [ext_resource type="Shader" uid="uid://y10pbugp5gpr" path="res://shaders/Filtro.gdshader" id="14_roeuy"]
 [ext_resource type="PackedScene" uid="uid://dn7h1w18vb6mr" path="res://scenes/Mapa.tscn" id="15_j7wrp"]
@@ -167,8 +166,6 @@ spot_range = 44.639
 spot_angle = 68.42
 spot_angle_attenuation = 0.13869624
 
-[node name="npr" parent="." unique_id=1178482308 instance=ExtResource("12_c5vow")]
-transform = Transform3D(-0.999875, 0, -0.015812127, 0, 1, 0, 0.015812127, 0, -0.999875, -5.156192, 0.50956726, 33.43061)
 
 [node name="MarcopoloG81200" parent="." unique_id=1188542954 instance=ExtResource("9_dpfe0")]
 transform = Transform3D(-1.1970665, 0, -0.08385402, 0, 1.1999999, 0, 0.08385402, 0, -1.1970665, -4.4254003, 0.5886567, 18.43787)

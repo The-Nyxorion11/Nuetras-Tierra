@@ -89,10 +89,11 @@ func _aplicar_fisica_contacto(delta: float) -> void:
 	var centro_masa: Vector3 = coche.global_position + coche.global_transform.basis * coche.center_of_mass
 	var radio_vec: Vector3 = punto_contacto - centro_masa
 
-	# Direcciones locales del vehículo
-	var up: Vector3 = coche.global_transform.basis.y
-	var right: Vector3 = coche.global_transform.basis.x
-	var forward: Vector3 = -coche.global_transform.basis.z
+	# Direcciones locales del vehículo (ortonormalizadas para evitar ejes no unitarios)
+	var basis_ortho: Basis = coche.global_transform.basis.orthonormalized()
+	var up: Vector3 = basis_ortho.y.normalized()
+	var right: Vector3 = basis_ortho.x.normalized()
+	var forward: Vector3 = -basis_ortho.z.normalized()
 	
 	# Aplicar dirección de volante
 	if es_directriz and abs(angulo_direccion) > 0.001:
