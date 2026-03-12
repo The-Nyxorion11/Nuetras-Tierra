@@ -28,7 +28,10 @@ func get_activo() -> bool:
 
 func _aplicar_visual() -> void:
 	if fondo:
-		fondo.color = color_activo if activo else color_inactivo
+		if fondo.material is ShaderMaterial:
+			fondo.material.set_shader_parameter("activo", activo)
+		else:
+			fondo.color = color_activo if activo else color_inactivo
 
 func _es_presion_primaria(event: InputEvent) -> bool:
 	if event is InputEventMouseButton:

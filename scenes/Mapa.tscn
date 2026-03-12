@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dn7h1w18vb6mr"]
 
 [ext_resource type="PackedScene" uid="uid://jbxpeds66da5" path="res://modelos3d/mapa/Fusa/Fusa.glb" id="1_2amej"]
+[ext_resource type="Material" uid="uid://bnk1qlwro1hpk" path="res://modelos3d/mapa/Fusa/carretera/carretera_linea_continua.tres" id="2_q4vu4"]
 [ext_resource type="Material" uid="uid://cn61tsdkj4h7d" path="res://modelos3d/mapa/tierra/tierra.tres" id="2_q7hep"]
 [ext_resource type="Material" uid="uid://byd4kudc03x78" path="res://modelos3d/mapa/Pasto.tres" id="2_rccca"]
 [ext_resource type="Texture2D" uid="uid://dw2ousf78jbra" path="res://modelos3d/mapa/Fusa/Fusa_texture13.png" id="3_pbs7t"]
@@ -708,7 +709,10 @@ shadow_mesh = SubResource("ArrayMesh_31h8r")
 
 [node name="Fusa" unique_id=650679895 instance=ExtResource("1_2amej")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="object0" parent_id_path=PackedInt32Array(126956364) index="0" unique_id=1602489592]
+[node name="object0" parent="." index="0" unique_id=126956364]
+material_override = ExtResource("2_q4vu4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="object0" index="0" unique_id=1602489592]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="object0/StaticBody3D" index="0" unique_id=800166304]
 shape = SubResource("ConcavePolygonShape3D_0862c")
@@ -718,7 +722,10 @@ shape = SubResource("ConcavePolygonShape3D_0862c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="object1/StaticBody3D" index="0" unique_id=1061536867]
 shape = SubResource("ConcavePolygonShape3D_rccca")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="object10" parent_id_path=PackedInt32Array(910318551) index="0" unique_id=986043140]
+[node name="object10" parent="." index="2" unique_id=910318551]
+material_override = ExtResource("2_q7hep")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="object10" index="0" unique_id=986043140]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="object10/StaticBody3D" index="0" unique_id=2028351852]
 shape = SubResource("ConcavePolygonShape3D_jguxj")
@@ -1691,7 +1698,10 @@ shape = SubResource("ConcavePolygonShape3D_1l2pi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="object297/StaticBody3D" index="0" unique_id=830923500]
 shape = SubResource("ConcavePolygonShape3D_ajwmf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="object3" parent_id_path=PackedInt32Array(2011828701) index="0" unique_id=16936986]
+[node name="object3" parent="." index="219" unique_id=2011828701]
+material_override = ExtResource("2_q7hep")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="object3" index="0" unique_id=16936986]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="object3/StaticBody3D" index="0" unique_id=2133833342]
 shape = SubResource("ConcavePolygonShape3D_umjin")

@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="NuestraTierra"
 run/main_scene="uid://bluhq7k0jidqb"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -258,10 +258,13 @@ textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
 global_illumination/gi/use_half_resolution=true
-environment/ssao/quality=3
+environment/ssao/quality=1
 environment/ssil/quality=3
-anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/smaa_edge_detection_threshold=0.06999999999999999
+environment/glow/upscale_mode=0
 environment/subsurface_scattering/subsurface_scattering_quality=2
 global_illumination/sdfgi/probe_ray_count=0
+anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
 mesh_lod/lod_change/threshold_pixels=10.0

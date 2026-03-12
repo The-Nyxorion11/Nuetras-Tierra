@@ -29,27 +29,17 @@ sky_material = SubResource("ShaderMaterial_bt6ee")
 [sub_resource type="Environment" id="Environment_bt6ee"]
 background_mode = 2
 sky = SubResource("Sky_4c5cp")
-ambient_light_sky_contribution = 0.5
-ambient_light_energy = 0.8
+ambient_light_source = 3
+ambient_light_color = Color(0.9497834, 0.94664246, 0.84357184, 1)
+ambient_light_energy = 0.37
+reflected_light_source = 2
 tonemap_mode = 3
-tonemap_white = 6.0
-ssr_max_steps = 32
-ssr_fade_in = 0.15528965
-ssr_fade_out = 0.4999998
-ssr_depth_tolerance = 0.21
-ssao_radius = 1.2
-ssao_intensity = 1.8
-glow_enabled = true
-glow_intensity = 0.6
-glow_bloom = 0.1
-glow_blend_mode = 0
-fog_mode = 1
-fog_light_color = Color(0.92947316, 0.91775256, 0.8808251, 1)
-fog_light_energy = 0.5
-fog_density = 0.1632
-fog_aerial_perspective = 0.1
-volumetric_fog_density = 0.02
-volumetric_fog_anisotropy = 0.7
+tonemap_exposure = 0.4
+tonemap_white = 1.87
+adjustment_enabled = true
+adjustment_brightness = 1.2
+adjustment_contrast = 1.1
+adjustment_saturation = 1.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_roeuy"]
 
@@ -71,9 +61,11 @@ shader_parameter/fatiga_ocular = 0.0
 [node name="Mapa" type="Node3D" unique_id=1320088043]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1329705658]
-transform = Transform3D(-0.13101423, -0.96276987, 0.23642828, -0.41244978, 0.26979586, 0.87011874, -0.9015101, 0.016483957, -0.43244386, 11.816716, 12.09083, 86.0765)
+transform = Transform3D(-0.08572683, -0.9949885, 0.05146639, 0.20385791, 0.03304644, 0.97844255, -0.9752399, 0.09437064, 0.20000333, 3.3157253, 6.2607, 20.710157)
 light_color = Color(0.99999946, 0.9302653, 0.68363184, 1)
+light_volumetric_fog_energy = 1.365
 light_angular_distance = 2.09
+light_specular = 6.536
 shadow_enabled = true
 shadow_blur = 1.5
 script = ExtResource("1_a5ike")
@@ -166,6 +158,5 @@ spot_range = 44.639
 spot_angle = 68.42
 spot_angle_attenuation = 0.13869624
 
-
 [node name="MarcopoloG81200" parent="." unique_id=1188542954 instance=ExtResource("9_dpfe0")]
-transform = Transform3D(-1.1970665, 0, -0.08385402, 0, 1.1999999, 0, 0.08385402, 0, -1.1970665, -4.4254003, 0.5886567, 18.43787)
+transform = Transform3D(-1.1999518, 0, -0.01074411, 0, 1.1999998, 0, 0.01074411, 0, -1.1999518, -4.9079366, 0.5886567, 36.14266)
