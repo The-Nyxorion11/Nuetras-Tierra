@@ -10,15 +10,19 @@ const COOLDOWN_CAMARA_MS: int = 180
 var _ultimo_cambio_camara_ms: int = -10000
 var _motor_activo: bool = false
 var _freno_mano_activo: bool = false
+var _baul_abierto: bool = false
 var _menu_desplegado: bool = false
 var _ultimo_toggle_menu_ms: int = 0
 const COOLDOWN_MENU_MS: int = 400
+var _anim_player_baul: AnimationPlayer
+var _audio_motor_baul: AudioStreamPlayer3D
 
 # --- NODOS DE UI ---
 @onready var label_marcha     = get_node_or_null("SafeArea/Interface/DisplayMarcha")
 @onready var label_velocidad  = $SafeArea/Interface/DisplayVelocidad
 @onready var boton_motor      = %BotonMotor
 @onready var boton_freno_mano = %BotonFrenoMano
+@onready var boton_baul       = %BotonBaul
 @onready var boton_salir      = %BotonSalir
 @onready var boton_camara     = %BotonCamara
 
@@ -56,6 +60,8 @@ func _ready() -> void:
 		_motor_ref = vehiculo.get_node_or_null("Motor")
 		if not _motor_ref:
 			push_warning("UIVehiculo: No se encontró el nodo 'Motor' en el vehículo.")
+		_anim_player_baul = vehiculo.get_node_or_null("AnimationPlayer") as AnimationPlayer
+		_audio_motor_baul = vehiculo.get_node_or_null("Motor_encendido_baul") as AudioStreamPlayer3D
 
 	# Aplicar shader a los botones
 	_aplicar_shader_botones()
@@ -75,6 +81,10 @@ func _ready() -> void:
 	if boton_freno_mano:
 		if not boton_freno_mano.gui_input.is_connected(_on_boton_freno_mano_input):
 			boton_freno_mano.gui_input.connect(_on_boton_freno_mano_input)
+
+	if boton_baul:
+		if not boton_baul.gui_input.is_connected(_on_boton_baul_input):
+			boton_baul.gui_input.connect(_on_boton_baul_input)
 
 	if boton_salir:
 		if not boton_salir.gui_input.is_connected(_on_boton_salir_input):
@@ -166,6 +176,38 @@ func _on_freno_mano_up() -> void:
 		return
 	InputVehiculo.freno_mano = false
 
+func _on_boton_baul_input(event: InputEvent) -> void:
+	if not _es_presion_primaria(event):
+		return
+	_toggle_baul()
+	get_viewport().set_input_as_handled()
+
+func _toggle_baul() -> void:
+	if _anim_player_baul == null:
+		push_warning("UIVehiculo: no se encontró AnimationPlayer para controlar el baúl.")
+		return
+
+	if _anim_player_baul.is_playing() and _anim_player_baul.current_animation == "abrir_baul":
+		return
+
+	if not _baul_abierto:
+		_baul_abierto = true
+		_anim_player_baul.play("abrir_baul")
+		if _anim_player_baul.has_animation("motor_encendido"):
+			_anim_player_baul.queue("motor_encendido")
+	else:
+		_baul_abierto = false
+		_detener_motor_baul()
+		_anim_player_baul.play_backwards("abrir_baul")
+
+func _detener_motor_baul() -> void:
+	if _anim_player_baul:
+		if _anim_player_baul.current_animation == "motor_encendido":
+			_anim_player_baul.stop(true)
+
+	if _audio_motor_baul and _audio_motor_baul.playing:
+		_audio_motor_baul.stop()
+
 func _on_boton_salir() -> void:
 	if vehiculo:
 		var jugador = vehiculo.get("jugador_ref")
@@ -193,6 +235,10 @@ func _actualizar_color_botones() -> void:
 	# Actualizar shader del botón de freno mano
 	if boton_freno_mano and boton_freno_mano.material is ShaderMaterial:
 		boton_freno_mano.material.set_shader_parameter("activo", _freno_mano_activo)
+
+	# Actualizar shader del botón del baúl
+	if boton_baul and boton_baul.material is ShaderMaterial:
+		boton_baul.material.set_shader_parameter("activo", _baul_abierto)
 
 func _es_presion_primaria(event: InputEvent) -> bool:
 	if event is InputEventMouseButton:

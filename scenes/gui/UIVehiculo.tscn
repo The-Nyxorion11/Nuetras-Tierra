@@ -39,6 +39,13 @@ shader_parameter/color_activo = Vector4(1, 1, 0, 1)
 shader_parameter/color_inactivo = Vector4(1, 1, 1, 1)
 shader_parameter/brillo_activo = 1.4
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_baul"]
+shader = ExtResource("16_boton")
+shader_parameter/activo = false
+shader_parameter/color_activo = Vector4(1, 1, 0, 1)
+shader_parameter/color_inactivo = Vector4(1, 1, 1, 1)
+shader_parameter/brillo_activo = 1.4
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dxb63"]
 shader = ExtResource("9_4cxyc")
 shader_parameter/rotacion = 0.0
@@ -251,6 +258,31 @@ mouse_filter = 2
 texture = ExtResource("3_sicxr")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="BotonBaul" type="ColorRect" parent="SafeArea/Interface/MenuDesplegable/PanelContenido/BotonesVehiculo" unique_id=100000204]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_baul")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="SafeArea/Interface/MenuDesplegable/PanelContenido/BotonesVehiculo/BotonBaul" unique_id=100000205]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -13.0
+offset_right = 16.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "BAUL"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BotonSalir" type="ColorRect" parent="SafeArea/Interface/MenuDesplegable/PanelContenido/BotonesVehiculo" unique_id=1926483195]
 unique_name_in_owner = true

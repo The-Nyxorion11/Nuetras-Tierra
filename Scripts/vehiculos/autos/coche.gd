@@ -1,3 +1,4 @@
+@tool
 # coche.gd
 extends RigidBody3D
 
@@ -6,6 +7,18 @@ extends RigidBody3D
 @onready var llantas_controlador = $ControladorLlantas
 @onready var ui_vehiculo = $UIVehiculo
 @onready var chasis_visual = $Cuerpo2/Plane
+
+@export_group("Skins")
+@export var carpeta_skins: String = "res://modelos3d/vehiculos/Buses/MarcopoloG8-1200/skins":
+	set(value):
+		carpeta_skins = value
+		_refrescar_skins_disponibles()
+		if Engine.is_editor_hint():
+			notify_property_list_changed()
+@export_node_path("MeshInstance3D") var nodo_skin_mesh_path: NodePath = ^"Cuerpo2/Plane"
+@export var superficie_skin: int = 0
+@export var aplicar_skin_al_iniciar: bool = false
+@export var parametro_shader_skin: StringName = &"albedo_texture"
 
 # Cámaras hardcodeadas según tu árbol de escena
 @onready var cam_externa  = $Cams_pivot/Cam_Externa
@@ -35,8 +48,20 @@ var nivel_suciedad: float = 0.0
 var nivel_barro: float = 0.0
 var nivel_mojado: float = 0.0
 var indice_camara: int = 0
+var skins_disponibles: PackedStringArray = []
+var skin_actual: String = ""
+var skin_inicial: String = ""
+
+func _enter_tree() -> void:
+	if Engine.is_editor_hint():
+		_refrescar_skins_disponibles()
+		notify_property_list_changed()
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		_refrescar_skins_disponibles()
+		return
+
 	add_to_group("vehiculo")
 	mass = masa_kg
 
@@ -58,6 +83,135 @@ func _ready() -> void:
 		chasis_visual.set_instance_shader_parameter("dirt_amount", 0.0)
 		chasis_visual.set_instance_shader_parameter("mud_amount",  0.0)
 		chasis_visual.set_instance_shader_parameter("wet_amount",  0.0)
+
+	_refrescar_skins_disponibles()
+	if aplicar_skin_al_iniciar and not skin_inicial.is_empty():
+		aplicar_skin(skin_inicial)
+
+func _get_property_list() -> Array[Dictionary]:
+	var lista: Array[Dictionary] = []
+	var opciones: PackedStringArray = ["<ninguna>"]
+
+	for skin in skins_disponibles:
+		opciones.append(skin)
+
+	lista.append({
+		"name": "skin_inicial",
+		"type": TYPE_STRING,
+		"hint": PROPERTY_HINT_ENUM,
+		"hint_string": ",".join(opciones),
+		"usage": PROPERTY_USAGE_DEFAULT
+	})
+
+	return lista
+
+func _get(property: StringName) -> Variant:
+	if property == &"skin_inicial":
+		return "<ninguna>" if skin_inicial.is_empty() else skin_inicial
+	return null
+
+func _set(property: StringName, value: Variant) -> bool:
+	if property == &"skin_inicial":
+		var seleccionado := String(value)
+		skin_inicial = "" if seleccionado == "<ninguna>" else seleccionado
+		return true
+	return false
+
+# ════════════════════════════════════════════════════════════════════
+#  SKINS
+# ════════════════════════════════════════════════════════════════════
+
+func _refrescar_skins_disponibles() -> void:
+	skins_disponibles.clear()
+
+	var dir := DirAccess.open(carpeta_skins)
+	if dir == null:
+		push_warning("coche.gd: no se pudo abrir carpeta de skins: %s" % carpeta_skins)
+		return
+
+	dir.list_dir_begin()
+	var nombre := dir.get_next()
+	while not nombre.is_empty():
+		if not dir.current_is_dir():
+			var ext := nombre.get_extension().to_lower()
+			if ext in ["png", "jpg", "jpeg", "webp"]:
+				skins_disponibles.append(nombre)
+		nombre = dir.get_next()
+	dir.list_dir_end()
+
+	skins_disponibles.sort()
+
+func obtener_skins_disponibles() -> PackedStringArray:
+	return skins_disponibles.duplicate()
+
+func aplicar_skin_por_indice(indice: int) -> bool:
+	if indice < 0 or indice >= skins_disponibles.size():
+		return false
+	return aplicar_skin(skins_disponibles[indice])
+
+func aplicar_skin(nombre_archivo: String) -> bool:
+	if nombre_archivo.is_empty():
+		return false
+
+	var ruta_skin := carpeta_skins.path_join(nombre_archivo)
+	if not ResourceLoader.exists(ruta_skin):
+		push_warning("coche.gd: skin no encontrada: %s" % ruta_skin)
+		return false
+
+	var textura := load(ruta_skin)
+	if not (textura is Texture2D):
+		push_warning("coche.gd: recurso no valido como textura: %s" % ruta_skin)
+		return false
+
+	var mesh_instance := get_node_or_null(nodo_skin_mesh_path) as MeshInstance3D
+	if mesh_instance == null:
+		push_warning("coche.gd: nodo_skin_mesh_path no apunta a MeshInstance3D")
+		return false
+
+	if superficie_skin < 0:
+		push_warning("coche.gd: superficie_skin invalida (%d)" % superficie_skin)
+		return false
+
+	var material := _obtener_material_skin(mesh_instance, superficie_skin)
+	if material == null:
+		push_warning("coche.gd: no se encontro material para aplicar skin")
+		return false
+
+	var material_skin := material.duplicate() as Material
+	if material_skin == null:
+		push_warning("coche.gd: no se pudo duplicar material para skin")
+		return false
+
+	if material_skin is StandardMaterial3D:
+		(material_skin as StandardMaterial3D).albedo_texture = textura
+	elif material_skin is ShaderMaterial:
+		(material_skin as ShaderMaterial).set_shader_parameter(parametro_shader_skin, textura)
+	else:
+		push_warning("coche.gd: tipo de material no soportado para skin")
+		return false
+
+	mesh_instance.set_surface_override_material(superficie_skin, material_skin)
+	skin_actual = nombre_archivo
+	return true
+
+func quitar_skin() -> void:
+	var mesh_instance := get_node_or_null(nodo_skin_mesh_path) as MeshInstance3D
+	if mesh_instance == null:
+		return
+
+	if superficie_skin >= 0:
+		mesh_instance.set_surface_override_material(superficie_skin, null)
+	skin_actual = ""
+
+func _obtener_material_skin(mesh_instance: MeshInstance3D, indice_superficie: int) -> Material:
+	var material := mesh_instance.get_surface_override_material(indice_superficie)
+	if material != null:
+		return material
+
+	if mesh_instance.mesh != null and indice_superficie < mesh_instance.mesh.get_surface_count():
+		return mesh_instance.mesh.surface_get_material(indice_superficie)
+
+	return null
 
 # ════════════════════════════════════════════════════════════════════
 #  CÁMARAS
